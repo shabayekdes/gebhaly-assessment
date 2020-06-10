@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('admin/{path?}', 'Admin\HomeController@index')->name('admin')->where('path', '.*');
+});
