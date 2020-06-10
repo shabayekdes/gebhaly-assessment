@@ -16,10 +16,10 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  (Auth::user()->type == 'admin' )) {
+        if (Auth::user() && Auth::user()->type == 'admin' ) {
             return $next($request);
         }
 
-        return redirect('/')->with('warning', "Your account don't have permsion to see page.");
+        return redirect('/login')->with('warning', "Your account don't have permsion to see page.");
     }
 }
