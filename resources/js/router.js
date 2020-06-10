@@ -8,7 +8,7 @@ import Dashboard from "@Admin/pages/Dashboard";
 
 const routes = [
     {
-        path: "admin",
+        path: "/admin",
         name: "dashboard",
         component: Dashboard
     }

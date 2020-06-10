@@ -53986,7 +53986,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 var routes = [{
-  path: "admin",
+  path: "/admin",
   name: "dashboard",
   component: _Admin_pages_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"]
 }];
