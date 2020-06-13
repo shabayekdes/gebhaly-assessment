@@ -32,7 +32,34 @@
                         </p>
                     </router-link>
                 </li>
-
+                {{-- Services --}}
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-photo-video"></i>
+                        <p>
+                            Services
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <router-link to="/admin/services" class="nav-link" active-class="active">
+                                <i class="nav-icon fas fa-video"></i>
+                                <p>
+                                    List Services
+                                </p>
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/admin/services/create" class="nav-link" active-class="active">
+                                <i class="nav-icon fas fa-cloud-upload-alt"></i>
+                                <p>
+                                    Add Service
+                                </p>
+                            </router-link>
+                        </li>
+                    </ul>
+                </li>
                 {{-- Logout --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

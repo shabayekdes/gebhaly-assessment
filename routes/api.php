@@ -12,9 +12,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::apiResource('admin/service', 'Admin\ServiceController');
 
 Route::group(['middleware' => 'auth:api'], function () {
-    // Route::apiResource('admin/service', 'Admin\ServiceController');
+    Route::apiResource('admin/service', 'Admin\ServiceController');
 
 });
