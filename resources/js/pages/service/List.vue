@@ -22,10 +22,14 @@
                 <h3 class="card-title">List</h3>
               </div>
               <div class="col-sm-12 col-md-7">
-                <router-link :to="{ name: 'service.create' }" class="btn btn-success float-right">
-                  Add New
+                <a
+                  class="btn btn-success float-right"
+                  @click="newModal()"
+                  href="#"
+                >
+                Add New
                   <i class="fas fa-wrench"></i>
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -83,6 +87,37 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          	<form @submit.prevent="createService">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="serviceTitle">Title</label>
+						<input type="text" class="form-control" v-model="getSingleService.title" id="serviceTitle" aria-describedby="titleHelp" placeholder="Enter service title">
+						<small id="titleHelp" class="form-text text-muted">Title should be sample.</small>
+					</div>
+					  <div class="form-group">
+						<label for="serviceDescription">Description</label>
+						<textarea class="form-control" v-model="getSingleService.description" id="serviceDescription" rows="3"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+					<button type="submit" class="btn btn-primary">Save changes</button>
+				</div>
+        	</form>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- /.content -->
 </div>
@@ -111,12 +146,19 @@ export default {
   },
   methods: {
     ...mapActions([
-      "fetchListServices"
+	  "fetchListServices",
+	  "storeService"
     ]),
+    newModal(){
+      $('#newModal').modal('show')
+	},
+	createService(){
+		this.storeService(this.getSingleService)
+	}
   },
   created() {
     this.fetchListServices();
   },
-  computed: mapGetters(["getAllServices", "getMetaData"])
+  computed: mapGetters(["getAllServices", "getSingleService", "getMetaData"])
 };
 </script>

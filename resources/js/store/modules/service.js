@@ -25,7 +25,6 @@ const actions = {
             commit("NEW_SERVICE", response);
             commit("RESET_NEW_SERVICE")
             dispatch("resetService")
-            router.push("/admin/services");
         } catch (e) {
             commit("SET_ERRORS", e.response.data.errors);
         }
