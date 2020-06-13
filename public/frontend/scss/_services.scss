@@ -22,9 +22,9 @@
         padding: 50px 30px 40px 30px;
         @include transition(.3s);
         .icon{
-            i{
+            h3{
                 font-size: 60px;
-                color: #F0542C;
+                color: $theme-color2;
             }
         }
         h3{

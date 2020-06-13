@@ -1,6 +1,6 @@
 .boxed-btn3 {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#001D38+0,fd8e5e+100 */
-    background: #F0542C ;/* IE6-9 */
+    background: $theme-color2 ;/* IE6-9 */
 	color: #fff;
 	display: inline-block;
 	padding: 19px 50px;
@@ -27,5 +27,17 @@
     }
     &.large-width{
         width: 220px;
+    }
+}
+.book_now{
+    display: inline-block;
+    font-size: 14px;
+    color: $theme-color2;
+    border: 1px solid $theme-color2;
+    text-transform: capitalize;
+    padding: 10px 25px;
+    &:hover{
+        background: $theme-color2;
+        color: #fff;
     }
 }

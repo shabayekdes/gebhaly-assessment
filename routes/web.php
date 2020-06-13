@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/test', 'ServiceController');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/{path?}', 'Admin\DashboardController@index')->name('admin')->where('path', '.*');
 });

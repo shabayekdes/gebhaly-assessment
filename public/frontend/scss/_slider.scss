@@ -1,8 +1,8 @@
 .slider_bg_1{
-    background-image: url(../img/banner/banner.png);
+    background-image: url(../img/banner.jpg);
 }
 .slider_bg_2{
-    background-image: url(../img/banner/banner2.png);
+    background-image: url(../img/banner2.jpg);
 }
 .slider_area{
     position: relative;
@@ -35,7 +35,7 @@
             }
             h3{
             font-family: $font2;
-            font-size: 60px;
+            font-size: 52px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
@@ -80,28 +80,21 @@
         height: 120px;
         left: 0px;
         width: 50px;
-        color: #fff;
-        background-color: transparent;
-        @include border-radius(0);
+        color: rgba(255,255,255,.2);
         left: 50px;
-        font-size: 14px;
+        font-size: 30px;
         border: none;
         left: 150px;
         line-height: 120px;
-        background: rgba(255,255,255,.2);
         left: 0;
         border: none !important;
         &.owl-next{
             right: 0;
             left: auto;
         }
-        &:hover{
-            background: rgba(255,255,255,255);
-            color:#001D38 ;
+        i:hover{
+            color: #fff;
             border: none;
         }
     }
-}
-.property_bg{
-    background-image: url(../img/banner/property.png);
 }

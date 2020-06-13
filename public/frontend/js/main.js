@@ -9,7 +9,7 @@
       margin:0,
       items:1,
       autoplay:true,
-      navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+      navText:['<i class="fas fa-arrow-circle-left"></i>','<i class="fas fa-arrow-circle-right"></i>'],
       nav:true,
       dots:false,
       autoplayHoverPause: true,
