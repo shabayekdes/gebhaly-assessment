@@ -32,6 +32,15 @@
                         </p>
                     </router-link>
                 </li>
+                {{-- Orders --}}
+                <li class="nav-item">
+                    <router-link to="/admin/order" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Sales
+                        </p>
+                    </router-link>
+                </li>
                 {{-- Services --}}
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -47,14 +56,6 @@
                                 <i class="nav-icon fas fa-video"></i>
                                 <p>
                                     List Services
-                                </p>
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/admin/service/create" class="nav-link" active-class="active">
-                                <i class="nav-icon fas fa-cloud-upload-alt"></i>
-                                <p>
-                                    Add Service
                                 </p>
                             </router-link>
                         </li>

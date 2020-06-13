@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Dashboard from "@Admin/pages/Dashboard";
 import ListServices from "@Admin/pages/service/List";
+import ListOrders from "@Admin/pages/order/List";
 
 const routes = [
     {
@@ -16,6 +17,11 @@ const routes = [
         path: "/admin/service",
         name: "service.index",
         component: ListServices
+    },
+    {
+        path: "/admin/order",
+        name: "order.index",
+        component: ListOrders
     }
 ];
 
