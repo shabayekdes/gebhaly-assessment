@@ -1,0 +1,31 @@
+.boxed-btn3 {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#001D38+0,fd8e5e+100 */
+    background: #F0542C ;/* IE6-9 */
+	color: #fff;
+	display: inline-block;
+	padding: 19px 50px;
+	font-family: $font1;
+	font-size: 14px;
+    border: 0;
+    // border: 1px solid transparent;
+    @include border-radius(0px);
+    // width: 180px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    @include transition(.3s);
+    cursor: pointer;
+    font-weight: 600;
+    &:hover{
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#001D38+0,fd8e5e+100 */
+        background: #001D38 ; /* IE6-9 */
+        color: #fff !important;
+        // border: 1px solid #001D38;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.large-width{
+        width: 220px;
+    }
+}
