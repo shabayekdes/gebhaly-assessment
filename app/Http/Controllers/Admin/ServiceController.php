@@ -4,9 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repository\ServiceRepositoryInterface; 
+use App\Http\Resources\ServiceResource;
 
 class ServiceController extends Controller
 {
+    /**
+     * @var ServiceRepositoryInterface
+     */
+    private $ServiceRepository;
+  
+    /**
+     * Service Controller constructor.
+     *
+     * @param ServiceRepositoryInterface $ServiceRepository
+     */
+    public function __construct(ServiceRepositoryInterface $ServiceRepository)
+    {
+        $this->ServiceRepository = $ServiceRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +31,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = $this->ServiceRepository->paginate();
+
+        return ServiceResource::collection($services);
     }
 
     /**

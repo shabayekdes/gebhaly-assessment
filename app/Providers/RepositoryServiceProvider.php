@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Repository\EloquentRepositoryInterface; 
-use App\Repository\VideoRepositoryInterface; 
-use App\Repository\Eloquent\VideoRepository; 
+use App\Repository\ServiceRepositoryInterface; 
+use App\Repository\Eloquent\ServiceRepository; 
 use App\Repository\Eloquent\BaseRepository; 
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -18,7 +18,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(EloquentRepositoryInterface::class, BaseRepository::class);
-        $this->app->bind(VideoRepositoryInterface::class, VideoRepository::class);
+        $this->app->bind(ServiceRepositoryInterface::class, ServiceRepository::class);
     }
 
     /**

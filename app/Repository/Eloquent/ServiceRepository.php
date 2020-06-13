@@ -12,11 +12,11 @@ use Illuminate\Support\Collection;
 class ServiceRepository extends BaseRepository implements ServiceRepositoryInterface
 {
    /**
-    * VideoRepository constructor.
+    * ServiceRepository constructor.
     *
-    * @param Video $model
+    * @param Service $model
     */
-   public function __construct(Video $model)
+   public function __construct(Service $model)
    {
        parent::__construct($model);
    }
