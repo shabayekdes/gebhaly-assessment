@@ -43,7 +43,7 @@
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
                         <li class="nav-item">
-                            <router-link to="/admin/services" class="nav-link" active-class="active">
+                            <router-link to="/admin/service" class="nav-link" active-class="active">
                                 <i class="nav-icon fas fa-video"></i>
                                 <p>
                                     List Services
@@ -51,7 +51,7 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/admin/services/create" class="nav-link" active-class="active">
+                            <router-link to="/admin/service/create" class="nav-link" active-class="active">
                                 <i class="nav-icon fas fa-cloud-upload-alt"></i>
                                 <p>
                                     Add Service

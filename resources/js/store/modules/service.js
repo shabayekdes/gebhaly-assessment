@@ -13,7 +13,7 @@ const getters = {
 const actions = {
     async fetchListServices({ commit }, paged = null) {
         let query = paged !== null ? `?page=${paged}` : "";
-        const response = await axios.get(`${urlApi}video${query}`);
+        const response = await axios.get(`${urlApi}service${query}`);
 
         commit("SHOW_LIST_SERVICE", response.data);
         commit("SET_META_DATA", response.data, { root: true });
