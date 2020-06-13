@@ -4,9 +4,24 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repository\OrderRepositoryInterface; 
 
 class OrderController extends Controller
 {
+    /**
+     * @var OrderRepositoryInterface
+     */
+    private $orderRepository;
+  
+    /**
+     * Service Controller constructor.
+     *
+     * @param OrderRepositoryInterface $ServiceRepository
+     */
+    public function __construct(OrderRepositoryInterface $orderRepository)
+    {
+        $this->orderRepository = $orderRepository;
+    }
     /**
      * Display a listing of the resource.
      *
