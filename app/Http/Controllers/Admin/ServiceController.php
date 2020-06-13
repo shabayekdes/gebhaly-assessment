@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repository\ServiceRepositoryInterface; 
 use App\Http\Resources\ServiceResource;
+use App\Http\Requests\storeServiceRequest;
 
 class ServiceController extends Controller
 {
@@ -39,12 +40,12 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  storeServiceRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(storeServiceRequest $request)
     {
-        dd($request->all());
+        return $this->ServiceRepository->create($request->all());
     }
 
     /**

@@ -55953,23 +55953,24 @@ var actions = {
 
             case 4:
               response = _context2.sent;
-              commit("NEW_SERVICE", response);
+              commit("NEW_SERVICE", response.data);
               commit("RESET_NEW_SERVICE");
               dispatch("resetService");
-              _context2.next = 13;
+              $('#newModal').modal('hide');
+              _context2.next = 14;
               break;
 
-            case 10:
-              _context2.prev = 10;
+            case 11:
+              _context2.prev = 11;
               _context2.t0 = _context2["catch"](1);
               commit("SET_ERRORS", _context2.t0.response.data.errors);
 
-            case 13:
+            case 14:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[1, 10]]);
+      }, _callee2, null, [[1, 11]]);
     }))();
   },
   resetService: function resetService(_ref3) {

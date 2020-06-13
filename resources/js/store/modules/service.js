@@ -22,9 +22,10 @@ const actions = {
         try {
             const response = await axios.post(`${urlApi}service`, data);
 
-            commit("NEW_SERVICE", response);
+            commit("NEW_SERVICE", response.data);
             commit("RESET_NEW_SERVICE")
             dispatch("resetService")
+            $('#newModal').modal('hide')
         } catch (e) {
             commit("SET_ERRORS", e.response.data.errors);
         }
