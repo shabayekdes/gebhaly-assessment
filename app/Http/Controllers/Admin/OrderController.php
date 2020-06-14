@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repository\OrderRepositoryInterface; 
+use App\Http\Resources\OrderResource;
 
 class OrderController extends Controller
 {
@@ -14,14 +15,15 @@ class OrderController extends Controller
     private $orderRepository;
   
     /**
-     * Service Controller constructor.
+     * Order Controller constructor.
      *
-     * @param OrderRepositoryInterface $ServiceRepository
+     * @param OrderRepositoryInterface $orderRepository
      */
     public function __construct(OrderRepositoryInterface $orderRepository)
     {
         $this->orderRepository = $orderRepository;
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +31,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = $this->orderRepository->paginate();
+
+        return OrderResource::collection($orders);
     }
 
     /**

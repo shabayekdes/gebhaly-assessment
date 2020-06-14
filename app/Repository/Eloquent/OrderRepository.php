@@ -3,9 +3,10 @@
 namespace App\Repository\Eloquent;
 
 use App\Models\Order;
-use App\Repository\ServiceRepositoryInterface;
+use App\Repository\OrderRepositoryInterface;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 
 class OrderRepository extends BaseRepository implements OrderRepositoryInterface
@@ -29,13 +30,11 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
    }
 
     /**
-    * @param array $attributes
-    *
-    * @return Model
+    * @return Collection
     */
-    public function create(array $attributes)
+    public function all(): Collection
     {
-        return $this->model->create($attributes);
+        return $this->model->all();    
     }
 
 }

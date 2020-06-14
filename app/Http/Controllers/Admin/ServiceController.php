@@ -13,16 +13,16 @@ class ServiceController extends Controller
     /**
      * @var ServiceRepositoryInterface
      */
-    private $ServiceRepository;
+    private $serviceRepository;
   
     /**
      * Service Controller constructor.
      *
-     * @param ServiceRepositoryInterface $ServiceRepository
+     * @param ServiceRepositoryInterface $serviceRepository
      */
-    public function __construct(ServiceRepositoryInterface $ServiceRepository)
+    public function __construct(ServiceRepositoryInterface $serviceRepository)
     {
-        $this->ServiceRepository = $ServiceRepository;
+        $this->serviceRepository = $serviceRepository;
     }
 
     /**
@@ -32,7 +32,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = $this->ServiceRepository->paginate();
+        $services = $this->serviceRepository->paginate();
 
         return ServiceResource::collection($services);
     }
@@ -45,7 +45,7 @@ class ServiceController extends Controller
      */
     public function store(storeServiceRequest $request)
     {
-        return $this->ServiceRepository->create($request->all());
+        return $this->serviceRepository->create($request->all());
     }
 
     /**
