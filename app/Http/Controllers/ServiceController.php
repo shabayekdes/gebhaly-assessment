@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
@@ -14,7 +15,17 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        Session::setId('l25O6KKuZz3BTEgrEEXprQBAiku8vMxAYq2zlhD1');
+        Session::start();
+        // session()->regenerate();
+        // Session::put('test', 'test');
+        // Session::put('name', 'Esmail Shabayek');
+        // $email = Session::get('email');
+        dd(session()->all());
+
+        // session()->put('name' , 'Esmail Shabayek');
+        // session()->flush();
+        // dd(session()->getId());
     }
 
     /**

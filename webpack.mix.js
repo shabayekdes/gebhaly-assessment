@@ -15,11 +15,14 @@ mix.webpackConfig({
         alias: {
             "@Admin": path.resolve(
                 __dirname,
-                "resources/js/"
+                "resources/js/admin"
             )
         }
     }
 });
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/admin/app.js', 'public/js/admin')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin');
+
+mix.js('resources/js/frontend/app.js', 'public/js/frontend')
+    .sass('resources/sass/frontend/app.scss', 'public/css/frontend');
