@@ -18,6 +18,7 @@ Route::get('/', 'FrontendController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/add-to-cart', 'CartController@addToCart')->name('ajax.store.cart');
 
 Route::resource('/test', 'ServiceController');
 

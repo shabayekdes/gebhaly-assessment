@@ -62,7 +62,7 @@
                         </div>
                         <h3>{{ $service->title }}</h3>
                         <p>{{ $service->description }}</p>
-                        <a href="#" id="book_now_{{ $service->id }}" data-id="{{ $service->id }}" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>
+                        <a href="JavaScript:void(0);" id="book_now_{{ $service->id }}" data-id="{{ $service->id }}" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>
                     </div>
                 </div>
                 @endforeach
@@ -119,9 +119,28 @@
 @push('scripts')
 <script>
     $( document ).ready(function() {
-        $( ".book_now" ).on( "click", function() {
-            let id = $( this ).data("id");
-            
+        $( ".book_now" ).on( "click", function(e) {
+            e.preventDefault();
+            const el = $( this );
+            // to disable 
+            $( this ).addClass('disabled-link');
+            $( this ).find('i').removeClass();
+            $( this ).find('i').addClass('fa fa-spinner fa-spin');
+
+            $.ajax({
+                method: "POST",
+                url: "{{ route('ajax.store.cart') }}",
+                data: { 
+                    _token: "{{ csrf_token() }}",
+                    service_id: el.data("id")
+                }
+                })
+                .done(function( data ) {
+                    el.removeClass('disabled-link');
+                    el.find('i').removeClass();
+                    el.find('i').addClass('fas fa-cart-plus');
+                    // alert( "Data Saved: " + data );
+                });
 
         });
     });

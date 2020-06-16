@@ -21,6 +21,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/frontend/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/frontend/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <style>
+    .disabled-link{
+        cursor: default;
+        pointer-events: none;        
+        text-decoration: none;
+        color: grey;
+    }
+</style>
 </head>
 <body>
     <!--[if lte IE 9]>
