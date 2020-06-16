@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <header>
     <div class="header-area ">
         <div class="header-top_area d-lg-block">
@@ -53,4 +50,3 @@
         </div>
     </div>
 </header>
-@endsection

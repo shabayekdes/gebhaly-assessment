@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class FrontendController extends Controller
 {
@@ -13,6 +14,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend');
+        $services = Service::where('status', true)->take(3)->get();
+        return view('frontend', compact('services'));
     }
 }

@@ -36,5 +36,7 @@
     <script src="{{ asset('js/frontend/owl.carousel.min.js') }}"></script>
 
     <script src="{{ asset('js/frontend/main.js') }}"></script>
+
+    @stack('scripts')
 </body>
 </html>

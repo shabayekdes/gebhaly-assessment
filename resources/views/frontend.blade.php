@@ -54,39 +54,18 @@
     <div class="services_area">
         <div class="container">
             <div class="row no-gutters">
+            @foreach($services as $service)
                 <div class="col-lg-4 col-md-4">
                     <div class="single_service">
                         <div class="icon">
-                            <h3>01</h3>
+                            <h3>0{{$loop->iteration}}</h3>
                         </div>
-                        <h3>Creative Plan & Design</h3>
-                        <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                            suffered alteration.</p>
-                        <a href="about.html" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>
+                        <h3>{{ $service->title }}</h3>
+                        <p>{{ $service->description }}</p>
+                        <a href="#" id="book_now_{{ $service->id }}" data-id="{{ $service->id }}" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_service">
-                        <div class="icon">
-                            <h3>02</h3>
-                        </div>
-                        <h3>Talented Peoples</h3>
-                        <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                            suffered alteration.</p>
-                        <a href="about.html" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_service">
-                        <div class="icon">
-                            <h3>03</h3>
-                        </div>
-                        <h3>Modern Tools</h3>
-                        <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                            suffered alteration.</p>
-                        <a href="about.html" class="book_now mt-2"><i class="fas fa-cart-plus"></i> Book Now</a>    
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -136,3 +115,15 @@
     </div>
     <!-- chose_us_area end -->
 @endsection
+
+@push('scripts')
+<script>
+    $( document ).ready(function() {
+        $( ".book_now" ).on( "click", function() {
+            let id = $( this ).data("id");
+            
+
+        });
+    });
+</script>
+@endpush
