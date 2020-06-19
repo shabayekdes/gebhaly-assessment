@@ -19,7 +19,7 @@ const actions = {
 };
 
 const mutations = {
-    SHOW_LIST_SERVICE: (state, data) => {
+    SHOW_LIST_ORDER: (state, data) => {
         state.orders = data.data;
     }
 };

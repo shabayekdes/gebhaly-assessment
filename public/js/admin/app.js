@@ -2160,6 +2160,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2178,13 +2181,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         active: true
       }, {
         width: "23%",
-        label: "Title",
-        name: "title",
+        label: "Customer Name",
+        name: "customer_name",
         active: true
       }, {
         width: "15%",
-        label: "Description",
-        name: "description",
+        label: "Customer Phone",
+        name: "customer_phone",
+        active: true
+      }, {
+        width: "15%",
+        label: "Session Id",
+        name: "session_id",
         active: true
       }, {
         width: "18%",
@@ -38991,6 +38999,18 @@ var render = function() {
                                     _vm._v(_vm._s(order.id))
                                   ]),
                                   _vm._v(" "),
+                                  _c("td", { staticClass: "sorting_1" }, [
+                                    _vm._v(_vm._s(order.customer_name))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", { staticClass: "sorting_1" }, [
+                                    _vm._v(_vm._s(order.phone))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", { staticClass: "sorting_1" }, [
+                                    _vm._v(_vm._s(order.session_id))
+                                  ]),
+                                  _vm._v(" "),
                                   _c(
                                     "td",
                                     {
@@ -39002,28 +39022,7 @@ var render = function() {
                                           staticClass: "col-sm-3 border-right"
                                         }),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-3" }, [
-                                          _c(
-                                            "a",
-                                            {
-                                              staticClass:
-                                                "btn btn-danger btn-xs",
-                                              attrs: { href: "#" },
-                                              on: {
-                                                click: function($event) {
-                                                  return _vm.deleteOrder(
-                                                    order.id
-                                                  )
-                                                }
-                                              }
-                                            },
-                                            [
-                                              _c("i", {
-                                                staticClass: "fas fa-trash"
-                                              })
-                                            ]
-                                          )
-                                        ])
+                                        _c("div", { staticClass: "col-sm-3" })
                                       ])
                                     ]
                                   )
@@ -56315,7 +56314,7 @@ var actions = {
   }
 };
 var mutations = {
-  SHOW_LIST_SERVICE: function SHOW_LIST_SERVICE(state, data) {
+  SHOW_LIST_ORDER: function SHOW_LIST_ORDER(state, data) {
     state.orders = data.data;
   }
 };

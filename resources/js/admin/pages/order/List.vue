@@ -32,6 +32,9 @@
                   <datatable :columns="columns" :length="getAllOrders.length">
                     <tr role="row" class="odd" v-for="order in getAllOrders" :key="order.id">
                       <td class="sorting_1">{{ order.id }}</td>
+                      <td class="sorting_1">{{ order.customer_name }}</td>
+                      <td class="sorting_1">{{ order.phone }}</td>
+                      <td class="sorting_1">{{ order.session_id }}</td>
                       <td class="project-actions text-right">
                         <div class="row">
                           <!-- /.col -->
@@ -45,13 +48,13 @@
                           </div>
                           <!-- /.col -->
                           <div class="col-sm-3">
-                            <a
+                            <!-- <a
                               class="btn btn-danger btn-xs"
                               @click="deleteOrder(order.id)"
                               href="#"
                             >
                               <i class="fas fa-trash"></i>
-                            </a>
+                            </a> -->
                           </div>
                           <!-- /.col -->
                         </div>
@@ -95,8 +98,9 @@ export default {
     return {
       columns: [
         { width: "2%", label: "#", name: "id", active: true },
-        { width: "23%", label: "Title", name: "title", active: true },
-        { width: "15%", label: "Description", name: "description", active: true },
+        { width: "23%", label: "Customer Name", name: "customer_name", active: true },
+        { width: "15%", label: "Customer Phone", name: "customer_phone", active: true },
+        { width: "15%", label: "Session Id", name: "session_id", active: true },
         { width: "18%", label: "Action", name: "action", active: false }
       ]
     };
