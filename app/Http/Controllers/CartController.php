@@ -9,7 +9,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class CartController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Store a newly created resource in storage.
      *
      * @param Service $service
      * @return \Illuminate\Http\Response

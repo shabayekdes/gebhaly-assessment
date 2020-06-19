@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('customer_email');
             $table->string('customer_name');
+            $table->string('phone');
             $table->boolean('is_guest')->default(false);
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('set null');
             $table->string('session_id')->nullable();

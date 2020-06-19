@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'FrontendController@index');
+Route::get('/', 'FrontendController@index')->name('frontend.index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::post('/cart/{service}', 'CartController@store')->name('ajax.store.cart');
 
 Route::resource('/test', 'ServiceController');
