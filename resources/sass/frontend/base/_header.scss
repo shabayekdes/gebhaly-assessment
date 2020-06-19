@@ -1,5 +1,10 @@
 .header-area{
+    left: 0;
+    right: 0;
     width: 100%;
+    top: 0;
+    z-index: 9;
+    position: absolute;
     .header-top_area{
         padding: 0;
         background: $heading-color;
@@ -50,10 +55,34 @@
         }
     }
     }
-    .main_header {
-        background: #fff;
+    .cart_bar {
+        background: rgba(4, 14, 39,.50);
         padding-top: 29px;
         padding-bottom: 64px;
-        
+        .logo{
+
+        }
+        .cart_menu{
+            .single_cart{
+                margin-left: 80px;
+                .icon{
+                    margin-right: 15px;
+                }
+                .cart_info{
+                    h3{
+                        font-size: 13px;
+                        color: $theme-color2;
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                    }
+                    p{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }
