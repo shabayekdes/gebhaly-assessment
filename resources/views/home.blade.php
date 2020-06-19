@@ -13,8 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @if(auth()->user()->type == "admin")
+                    <a href="/admin/order" class="btn btn-success">
+                        Admin panel
+                    </a>
+                    @else
+                    <a href="/" class="btn btn-success">
+                        Homepage
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>

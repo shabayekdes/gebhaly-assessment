@@ -37,7 +37,7 @@
                     <div class="col-xl-7 col-md-7">
                         <div class="header_right">
                             <ul>
-                                <li><i class="far fa-envelope"></i> needhelp@gmail.com</li>
+                                <li><i class="fa fa-envelope"></i> needhelp@gmail.com</li>
                                 <li><i class="fas fa-phone-alt"></i> 666 7475 25252</li>
                             </ul>
                         </div>
@@ -53,7 +53,7 @@
                     >
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="img/logo.png" alt="" />
                                 </a>
                             </div>
